@@ -1,0 +1,24 @@
+button{
+    background-color: #303183;
+    font-family: 'Ubuntu';
+    border:none;
+    border-radius: 15px;
+    padding: 5px 20px;
+
+}
+button>a{
+    text-decoration: none;
+    color: white;
+}
+#jobCard{
+    position: relative;
+    z-index: 1;
+}
+.popUp{
+    position: absolute;
+    top: 5rem
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+}

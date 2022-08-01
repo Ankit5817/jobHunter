@@ -1,0 +1,20 @@
+.navbar{
+    background-color: #303183;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 5;
+}
+#brandName{
+    font-family: 'Itim';
+}
+.nav-link{
+    font-family: 'Ubuntu';
+}
+.links{
+    border-radius: 37px;
+    width: 5rem;
+}
+.links:hover{
+    background-color: #0b0c63;
+}

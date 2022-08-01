@@ -1,0 +1,13 @@
+.jobRole,.location,.search{
+    width: 95%;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 0px;
+}
+.search{
+    background-color: #303183;
+    font-family: 'Ubuntu';
+}
+.search:hover{
+    background-color: #0b0c63;
+}

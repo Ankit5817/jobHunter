@@ -1,0 +1,23 @@
+#login{
+  margin-top: 3.9rem;
+}
+.inputFields{
+  background-color: rgb(253, 253, 253);
+  width: 18rem;
+}
+.form{
+  background-color: #9897ff;
+}
+button:hover{
+  background-color: rgb(18, 1, 255);
+}
+a{
+  color: rgb(18, 1, 255);
+  font-weight: 500;
+}
+.img1{
+  width: 85%;
+}
+.hr{
+  padding: 0px 90px;
+}

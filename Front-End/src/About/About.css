@@ -1,0 +1,44 @@
+#aboutimg{
+    width: 100%
+}
+.sec1{
+    margin-top: 5rem;
+}
+.sec2{
+    background-color: #303183;
+}
+.card>img{
+    height: 6rem;
+}
+.sec2>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec2{
+    width: 99.6vw;
+}
+.sec2 .card{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: rgb(108, 99, 241) 0px 0px 30px;
+}
+h2{
+    font-family: 'Itim';
+}
+.sec3>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardSec3>img{
+    height: 5rem;
+}
+.cardSec3{
+    box-shadow: black 5px 5px 10px;
+    border-radius: 15px;
+    padding: 18px 16px;
+}
+.sec3{
+    width: 99.6vw;
+}

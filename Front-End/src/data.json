@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "values": {
+        "firstname": "Aman",
+        "lastname": "Gupta",
+        "email": "amangupta@gamil.com",
+        "password": "123456",
+        "confirmpassword": "123456"
+      },
+      "id": 1
+    },
+    {
+      "values": {
+        "firstname": "Satyam",
+        "lastname": "Gupta",
+        "email": "satyam@gamil.com",
+        "password": "123456",
+        "confirmpassword": "123456"
+      },
+      "id": 2
+    },
+    {
+      "values": {
+        "firstname": "Aman",
+        "lastname": "Kumar",
+        "email": "aqua@gmail.com",
+        "password": "12345",
+        "confirmpassword": "12345"
+      },
+      "id": 3
+    },
+    {
+      "values": {
+        "firstname": "Anupam",
+        "lastname": "Kushwaha",
+        "email": "anupam@gmail.com",
+        "password": "12345",
+        "confirmpassword": "12345"
+      },
+      "id": 4
+    },
+    {
+      "values": {
+        "firstname": "SAtyam",
+        "lastname": "gasdg",
+        "email": "sat@mail.com",
+        "password": "Satyamgupta1@",
+        "confirmpassword": "Satyamgupta1@"
+      },
+      "id": 5
+    },
+    {
+      "values": {
+        "firstname": "Aman",
+        "lastname": "Gupta",
+        "email": "amangupta@gamil.com",
+        "password": "",
+        "confirmpassword": ""
+      },
+      "id": 6
+    },
+    {
+      "values": {
+        "firstname": "Ankit",
+        "lastname": "Sharma",
+        "email": "ankit@gmail.com",
+        "password": "Ankit12345@",
+        "confirmpassword": "Ankit12345@"
+      },
+      "id": 7
+    },
+    {
+      "values": {
+        "firstname": "swati ",
+        "lastname": "Sharma",
+        "email": "swati@gmail.com",
+        "password": "@Nkit2000",
+        "confirmpassword": "@Nkit2000"
+      },
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.footer{
+    background-color: #303183;
+    height: 4rem;
+    position: absolute;
+    width: 100%;
+}
+.footer>div{
+    position: relative;
+    top: 1.2rem;
+}
