@@ -13,6 +13,8 @@ import About from './About/About'
 import WishList from "./WishList/WishList";
 import Profile from './Profile/Profile'
 import AdminPage from "./AdminPage/AdminPage";
+import AppliedJobs from "./AppliedJobs/AppliedJobs";
+import Career from './Career/Career'
 
 function App() {
 
@@ -32,8 +34,10 @@ function App() {
             <Route path='/wishList/:email' element={<WishList />} />
             <Route path='/profile/:email' element={<Profile />} />
             <Route path='/admin' element={<AdminPage />} />
+            <Route path='/applied/jobs/:email' element={<AppliedJobs />} />
+            <Route path='/career/advice' element={<Career />} />
           </Routes>
-          <Footer />
+          <Footer className='footer'/>
         </BrowserRouter>
       </AppStates>
     </div>

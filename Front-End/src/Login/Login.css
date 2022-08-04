@@ -21,3 +21,21 @@ a{
 .hr{
   padding: 0px 90px;
 }
+
+@media screen and (max-width: 576px) {
+  .loginImg{
+    display: none;
+  }
+  #login{
+    margin-top: 75px;
+  }
+  .hr{
+    padding: 0px 20px;
+  }
+  .adminLog{
+    margin-top: 0px;
+  }
+  .loginPage{
+    min-height: 48.5rem;
+  }
+}

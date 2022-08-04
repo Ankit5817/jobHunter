@@ -53,7 +53,7 @@ const Login = () => {
     }
 
     return (
-        <>
+        <div className='loginPage'>
             <div id='login' className='container-fluid'>
                 <div className="row justify-content-center">
                     <div className="col-md-5 col-11 d-flex align-items-center justify-content-center text-center">
@@ -66,17 +66,17 @@ const Login = () => {
                         </form>
                     </div>
                     <div className="col-md-5 col-11 text-start">
-                        <img src={img} alt="" />
+                        <img src={img} alt="" className='loginImg'/>
                     </div>
                 </div>
             </div>
             <div className='hr'>
                 <hr />
             </div>
-            <div id='login' className='container-fluid mb-5'>
+            <div id='login adminLog' className='container-fluid mb-5'>
                 <div className="row justify-content-center">
                     <div className="col-md-5 col-11 text-center">
-                        <img src={img1} alt="" className='img1' />
+                        <img src={img1} alt="" className='img1 loginImg' />
                     </div>
                     <div className="col-md-5 col-11 d-flex align-items-center justify-content-center text-center">
                         <form className='py-5 px-4 rounded form'>
@@ -89,7 +89,7 @@ const Login = () => {
                 </div>
             </div>
             <ToastContainer position="top-center" />
-        </>
+        </div>
     )
 }
 

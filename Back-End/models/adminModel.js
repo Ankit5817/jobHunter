@@ -7,7 +7,7 @@ const adminSchema = new Schema({
         required: true
     },
     userId: [
-        String
+        Object
     ],
 });
 

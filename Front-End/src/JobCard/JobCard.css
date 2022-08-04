@@ -22,3 +22,26 @@ button>a{
     display: flex;
     flex-direction: row;
 }
+
+@media screen and (max-width: 576px) {
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+    .dynamicBtn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+    }
+    .staticBtn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        margin: 3px 0px;
+    }
+    .dynamicBtn>button{
+        margin: 3px 0px;
+    }
+}

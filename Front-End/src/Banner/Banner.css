@@ -1,20 +1,33 @@
-.container-fluid{
+.container-fluid {
     border-radius: 15px;
 }
-.container-fluid{
+
+.container-fluid {
     width: 93%;
 }
-#banner{
+
+#banner {
     background-image: url('../images/banner_bg.jpeg');
     background-size: cover;
     margin-top: 9.3vh;
     z-index: 5;
     height: 45vh;
 }
-.img{
+
+.img {
     width: 23vw;
 }
-h3{
+
+h3 {
     border-radius: 15px;
     font-family: 'Itim';
+}
+
+@media screen and (max-width: 576px) {
+    .img{
+        display: none;
+    }
+    #banner{
+        margin-top: 5vh;
+    }
 }

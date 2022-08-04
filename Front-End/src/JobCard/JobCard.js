@@ -69,9 +69,9 @@ export default function JobCard() {
                         <span className="card-text">{item.location[0].name}</span>
                         <p className="card-text mt-0 text-muted" dangerouslySetInnerHTML={{ __html: item.description.slice(0, 200) }}></p>
                         <div className='float-end buttons'>
-                            <div><button className='text-white me-2'><a href={item.applyLink}>Apply</a></button></div>
+                            <div className='staticBtn'><button className='text-white me-2'><a href={item.applyLink}>Apply</a></button></div>
                             {
-                                state.status === false ? null : <div><button className='text-white me-2' onClick={()=>applyWithUs(item.id)}>Appy with Us</button><button className='text-white' onClick={() => addToWishlist(item.id)}>Add To Wishlist</button></div>
+                                state.status === false ? null : <div className='dynamicBtn'><button className='text-white me-2' onClick={()=>applyWithUs(item.id)}>Appy with Us</button><button className='text-white' onClick={() => addToWishlist(item.id)}>Add To Wishlist</button></div>
                             }
                         </div>
                     </div>

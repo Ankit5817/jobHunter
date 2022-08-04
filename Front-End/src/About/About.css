@@ -42,3 +42,9 @@ h2{
 .sec3{
     width: 99.6vw;
 }
+
+@media screen and (max-width : 576px) {
+    .cardContainer{
+        padding-left: 50px;
+    }
+}

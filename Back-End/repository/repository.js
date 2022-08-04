@@ -46,8 +46,8 @@ const sendMail = (email, hostname) => {
 
             let bool = await main(link, user.email)
 
-            if (bool) {
-                resolve({ message: "Link has been sent to your email id", success: true })
+            if (bool.msg) {
+                resolve({ message: "Link has been sent to your email id", success: true, url: bool.msg.url })
             } else {
                 reject({ message: "Link coud not be sent to your email id", success: false })
             }
@@ -122,7 +122,7 @@ function UpdateUser(email, user) {
             }
 
             else {
-                reject({success: false});
+                reject({ success: false });
             }
 
         })
@@ -146,6 +146,18 @@ function GetWishlist(email) {
         userModel.findOne({ email: email }, (err, data) => {
             if (!err) {
                 resolve(data.wishlist);
+            } else {
+                reject(err);
+            }
+        });
+    });
+}
+
+function GetAppliedJobs(email) {
+    return new Promise((resolve, reject) => {
+        userModel.findOne({ email: email }, (err, data) => {
+            if (!err) {
+                resolve(data.appliedJobs);
             } else {
                 reject(err);
             }
@@ -192,4 +204,4 @@ function DeleteWishlist(email, jobId) {
     });
 }
 
-module.exports = { userLogin, userLogout, resetPassword, sendMail, AddUser, UpdateUser, DeleteUser, GetUser, DeleteWishlist, GetWishlist, UpdateWishlist }
+module.exports = { userLogin, userLogout, resetPassword, sendMail, AddUser, UpdateUser, DeleteUser, GetUser, DeleteWishlist, GetWishlist, UpdateWishlist, GetAppliedJobs }

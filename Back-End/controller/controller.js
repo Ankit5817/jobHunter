@@ -2,6 +2,7 @@ const repo = require('../repository/repository')
 const axios = require('axios')
 const adminModel = require('../models/adminModel')
 const secretModel = require('../models/secretModel')
+const userModel = require('../models/userModel')
 
 const userLogin = (req, res) => {
     repo.userLogin(req.body.email, req.body.password).then(data => {
@@ -191,6 +192,30 @@ function GetWishlist(req, res) {
     });
 }
 
+function GetAppliedJobs(req, res) {
+    repo.GetAppliedJobs(req.params.email).then(async (data) => {
+        toFront = []
+        for (let i = 0; i < data.length; i++) {
+            axios.get(`https://www.themuse.com/api/public/jobs/${data[i]}?api_key=c57511fb0081531403e8c0d584fba04d66dfc65899320596258c6366f15932e6`).then((response) => {
+                let obj = {
+                    companyName: response.data.company.name,
+                    applyLink: response.data.refs.landing_page,
+                    location: response.data.locations,
+                    publishDate: response.data.publication_date,
+                    position: response.data.categories[0].name,
+                    description: response.data.contents,
+                    id: response.data.id
+                }
+                toFront.push(obj)
+            })
+        }
+        setTimeout(() => {
+            res.status(200).send(toFront)
+        }, 2000);
+
+    });
+}
+
 function UpdateWishlist(req, res) {
     repo.UpdateWishlist(req.params.email, req.body.jobId).then(data => {
         res.status(200).send(data);
@@ -214,28 +239,38 @@ const GetDatabse = async (req, res) => {
 };
 
 const applyForJob = async (req, res) => {
-    const data = await adminModel.findOne({ jobId: req.body.jobId });
+    let data = await adminModel.findOne({ jobId: req.body.jobId })
     if (!data) {
         const entry = new adminModel({
             jobId: req.body.jobId,
-            userId: req.params.email
+            userId: { email: req.params.email, status: 'pending' }
         })
-        entry.save((error) => {
+        await userModel.findOneAndUpdate({ email: req.params.email }, {
+            $push: {
+                appliedJobs: [req.body.jobId]
+            }
+        })
+        entry.save(async (error) => {
             if (!error) {
-                res.status(200).send({success: true, msg: "entry created succesfully" });
+                res.status(200).send({ success: true, msg: "entry created succesfully" });
             } else {
-                res.status(400).send({success: false, msg: "error" });
+                res.status(400).send({ success: false, msg: "error" });
             }
         }
 
         )
     } else {
-        await adminModel.findOneAndUpdate({ jobId: req.body.jobId }, { $push: { userId: [req.params.email] } });
-        // console.log(req.body.user_id);
-        res.status(200).send({success: true, msg: "user Updated to array" });
+        await adminModel.findOneAndUpdate({ jobId: req.body.jobId }, { $push: { userId: { email: req.params.email, status: 'pending' } } });
+        await userModel.findOneAndUpdate({ email: req.params.email }, {
+            $push: {
+                appliedJobs: [req.body.jobId]
+            }
+        })
+        res.status(200).send({ success: true, msg: "user Updated to array" });
 
 
     }
+
 }
 
 const checkAdmin = (req, res) => {
@@ -248,4 +283,48 @@ const checkAdmin = (req, res) => {
     })
 }
 
-module.exports = { userLogin, userLogout, resetPassword, sendMail, getJobs, AddUser, UpdateUser, DeleteUser, GetUser, filterJobs, GetWishlist, DeleteWishlist, UpdateWishlist, GetDatabse, applyForJob, checkAdmin }
+const getAdminJobs = async (req, res) => {
+    let adminJobData = await adminModel.find({})
+    let toFrontAdmin = []
+    for (let i = 0; i < adminJobData.length; i++) {
+        axios.get(`https://www.themuse.com/api/public/jobs/${adminJobData[i].jobId}?api_key=c57511fb0081531403e8c0d584fba04d66dfc65899320596258c6366f15932e6`).then((response) => {
+            let obj = {
+                companyName: response.data.company.name,
+                applyLink: response.data.refs.landing_page,
+                location: response.data.locations,
+                publishDate: response.data.publication_date,
+                position: response.data.categories[0].name,
+                description: response.data.contents,
+                id: response.data.id,
+                userId: adminJobData[i].userId
+            }
+            toFrontAdmin.push(obj)
+        })
+    }
+    setTimeout(() => {
+        res.status(200).send(toFrontAdmin)
+    }, 2000);
+}
+
+const changeJobStatus = (req, res) => {
+    adminModel.updateOne({jobId: req.body.jobId, "userId.email": req.body.email},{$set:{"userId.$.status": req.body.status}},(err)=> {
+        if(!err) {
+            res.status(200).send({success: true})
+        } else {
+            res.status(400).send({success: false})
+        }
+    })
+}
+
+const checkStatus = (req, res) => {
+    adminModel.findOne({jobId: req.body.jobId}, (err,data) => {
+        if(data) {
+            let obj = data.userId.find(item => item.email = req.body.email)
+            res.status(200).send({msg: obj.status})
+        } else {
+            res.status(400).send({msg: 'error'})
+        }
+    })
+}
+
+module.exports = { userLogin, userLogout, resetPassword, sendMail, getJobs, AddUser, UpdateUser, DeleteUser, GetUser, filterJobs, GetWishlist, DeleteWishlist, UpdateWishlist, GetDatabse, applyForJob, checkAdmin, GetAppliedJobs, getAdminJobs, changeJobStatus, checkStatus }

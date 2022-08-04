@@ -29,3 +29,5 @@ app.listen(3050, (err) => {
         console.log(err)
     }
 })
+
+module.exports = app

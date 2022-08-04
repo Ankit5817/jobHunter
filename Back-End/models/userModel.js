@@ -44,7 +44,8 @@ const userSchema = new Schema({
     },
     brief: {
         type: String
-    }
+    },
+    appliedJobs: [String]
 });
 
 module.exports = mongoose.model("userModel", userSchema, 'Users');

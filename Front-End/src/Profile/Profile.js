@@ -49,9 +49,6 @@ export default function Profile() {
         toast.success('Edit Successfull', {
           position: "bottom-right"
         })
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 1000);
       } else {
         toast.error('Something went wrong', {
           position: "bottom-right"
@@ -61,7 +58,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="container">
+    <div className="container profPage">
       <div className="row py-3" id='section'>
         <div className="col-md-7 col-11 text-center">
           <img src={banner} alt="" id='imgBanner' />
@@ -87,7 +84,7 @@ export default function Profile() {
             <input type="text" placeholder='Job Profile' defaultValue={jobProfile} onChange={(e) => setjobProfile(e.target.value)} />
             <input type="text" placeholder='Qualification' defaultValue={qualification} onChange={(e) => setqualification(e.target.value)} />
             <input type="text" placeholder='Experience' defaultValue={experience} onChange={(e) => setexperience(e.target.value)} />
-            <input type="text" placeholder='Phone' defaultValue={phone} onChange={(e) => setphone(e.target.value)} />
+            <input type='number' placeholder='Phone' defaultValue={phone} onChange={(e) => setphone(e.target.value)} />
           </div>
           <button className='text-white' onClick={editInfo}>Edit</button>
         </div>

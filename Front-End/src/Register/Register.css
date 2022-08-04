@@ -136,5 +136,8 @@ div input:hover {
         margin: 10px;
 
     }
+    #register{
+        height: 83.6vh;
+    }
 
 }

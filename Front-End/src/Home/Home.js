@@ -5,7 +5,11 @@ import JobCard from '../JobCard/JobCard'
 import AppContext from '../Context/AppContext'
 import { useContext } from 'react'
 
-export default function Home() {
+export default function Home() {   
+
+    // const state = useContext(AppContext)
+    
+    // state.changeStatus(false)
 
     return (
         <div>

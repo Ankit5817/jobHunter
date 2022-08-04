@@ -3,5 +3,8 @@
     font-weight: bold;
 }
 .secAdmin{
-    min-height: 33.3rem;
+    min-height: 32.3rem;
+}
+.adminJobBox{
+    background-color: #edecff;
 }

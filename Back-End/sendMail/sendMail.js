@@ -11,6 +11,7 @@ async function main(link, toUser) {
         host: "smtp.ethereal.email",
         port: 587,
         secure: false, // true for 465, false for other ports
+        // service: 'gmail',
         auth: {
             user: testAccount.user, // generated ethereal user
             pass: testAccount.pass, // generated ethereal password
@@ -19,7 +20,7 @@ async function main(link, toUser) {
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-        from: '<foo@example.com>', // sender address
+        from: 'jobhunter6450@gmail.com', // sender address
         to: toUser, // list of receivers
         subject: "Reset Password", // Subject line
         text: "Hello world?", // plain text body
@@ -33,11 +34,35 @@ async function main(link, toUser) {
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
-    return true
+    // let mailTransport = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         user: 'jobhunter6450@gmail.com',
+    //         pass: 'xhehdhzjlarzsohd'
+    //     }
+    // })
+
+    // let details = {
+    //     from: 'jobhunter6450@gmail.com',
+    //     to: toUser,
+    //     subject: "Reset Password",
+    //     text: "Hello world?",
+    //     html: `<b>We have received a password change request from your account<br><br>Click on the link below to reset your password<br><br><a href="${link}">click here</a></b>`,
+    // }
+
+    // mailTransport.sendMail(details, (err)=>{
+    //     if(!err){
+    //         console.log('mail sent')
+    //     } else {
+    //         console.log(err)
+    //     }
+    // })
+
+    return {success: true, url: nodemailer.getTestMessageUrl(info)}
 }
 
 main().catch((err) => {
-    return false
+    return {msg: false}
 });
 
 module.exports = main

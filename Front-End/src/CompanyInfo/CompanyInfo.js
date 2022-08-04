@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function CompanyInfo() {
     return (
-        <div className='bg-white box p-4 border border-secondary'>
+        <div className='bg-white box p-4 my-2 border border-secondary'>
             <div>
                 <h5>JobHunter Private Limited</h5>
             </div>

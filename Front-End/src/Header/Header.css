@@ -18,3 +18,9 @@
 .links:hover{
     background-color: #0b0c63;
 }
+.applied{
+    width: 110px;
+}
+.careerBtn{
+    width: 125px;
+}

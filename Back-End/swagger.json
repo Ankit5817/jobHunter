@@ -1,0 +1,219 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "User API",
+        "description": "User API developed in ExpressJS",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "host": "localhost:3050",
+    "basePath": "/api",
+    "paths": {
+        "/login": {
+            "post": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "For User login"
+                ],
+                "description": "Returns all User from database",
+                "parameters": [{
+                    "name": "email",
+                    "name": "password",
+                    
+                    "in": "body",
+                    "type": "string",
+                    "description": "Login User"
+                    }
+                   
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/addUser": {
+            "post": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "To add User "
+                ],
+                "description": "User Registration",
+                "parameters": [
+                    {
+                        "name": "firstname",
+                        "name": "lastname",
+                        "name": "email",
+                        "name": "password",
+                        
+                        "in": "body",
+                        "required": true,
+                        "description": "Creating a user in database",
+                        "type": "string"
+                    }
+              
+                   
+                    
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/deleteUser/:email": {
+            "delete": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "To delete a userUser "
+                ],
+                "description": "Delete a user",
+                "parameters": [
+                    {
+                        
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "Creating a user in database",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/updateUser/:email": {
+            "put": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "To Update a userUser "
+                ],
+                "description": "Update a user",
+                "parameters": [
+                    {
+                        
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "Update a user in database",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/getUser/:email": {
+            "get": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "Get User By Email"
+                ],
+                "description": "Returns User based on Email",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "Email of user that we want to find",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                       
+                    }
+                }
+            }
+        },
+        
+        "/getwishlist/:email": {
+            "get": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "Get wishlist of user "
+                ],
+                "description": "Get wishlist of user ",
+                "parameters": [
+                    {
+                        
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "Get wishlist of user",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/updateWishlist/:email": {
+            "put": {
+                "x-swagger-router-controller": "../controller/controller",
+                "tags": [
+                    "Update wishlist of user "
+                ],
+                "description": "Update wishlist of user ",
+                "parameters": [
+                    {
+                        
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "Update wishlist of user",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/deleteWishlist/:email": {
+            "delete": {
+                "x-swagger-router-controller": "controller",
+                "tags": [
+                    "Delete wishlist of user "
+                ],
+                "description": "Delete wishlist of user ",
+                "parameters": [
+                    {
+                        
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "Delete wishlist of user",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+        
+    
+    
+
+    }
+}

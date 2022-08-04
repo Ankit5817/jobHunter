@@ -30,43 +30,39 @@ export default function About() {
         <div>
           <h2 className='text-white mb-5'>Top Companies For You</h2>
         </div>
-        <div className="col-md-3 col-11">
+        <div className="col-md-3 col-11 my-2">
           <div className="card" style={{ width: "15rem" }}>
             <img src={googleImg} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Google</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Know More</a>
             </div>
           </div>
         </div>
-        <div className="col-md-3 col-11">
+        <div className="col-md-3 col-11 my-2">
           <div className="card" style={{ width: "15rem" }}>
             <img src={wiproImg} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Wipro</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Know More</a>
             </div>
           </div>
         </div>
-        <div className="col-md-3 col-11">
+        <div className="col-md-3 col-11 my-2">
           <div className="card" style={{ width: "15rem" }}>
             <img src={amazonImg} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Amazon</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Know More</a>
             </div>
           </div>
         </div>
-        <div className="col-md-3 col-11">
+        <div className="col-md-3 col-11 my-2">
           <div className="card" style={{ width: "15rem" }}>
             <img src={microsoftImg} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Microsoft</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Know More</a>
             </div>
           </div>
         </div>
@@ -76,7 +72,7 @@ export default function About() {
         <div>
           <h2 className='mb-5'>Happy Clients</h2>
         </div>
-        <div className="col-md-4 col-11">
+        <div className="col-md-4 col-11 text-center my-2 cardContainer">
           <div className="cardSec3" style={{ width: "25rem" }}>
             <img src={avatar1} alt="..." />
             <div className="card-body">
@@ -85,7 +81,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="col-md-4 col-11">
+        <div className="col-md-4 col-11 text-center my-2 cardContainer">
           <div className="cardSec3" style={{ width: "25rem" }}>
             <img src={avatar2} alt="..." />
             <div className="card-body">
@@ -94,7 +90,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="col-md-4 col-11">
+        <div className="col-md-4 col-11 text-center my-2 cardContainer">
           <div className="cardSec3" style={{ width: "25rem" }}>
             <img src={avatar3} alt="..." />
             <div className="card-body">
